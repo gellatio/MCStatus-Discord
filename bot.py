@@ -36,6 +36,13 @@ async def set(ctx, arg1, arg2, arg3):
             data['data'][chanid]['role'] = arg3
             with open('config.json', 'w') as outfile:
                 json.dump(data, outfile)
+            with open('status.json') as status_file:
+                alive = json.load(status_file)
+                alive['data'][chanid] = {}
+                alive['data'][chanid]['alive'] = True
+                alive['data'][chanid]['sent'] = False
+                with open('status.json', 'w') as outfile:
+                    json.dump(alive, outfile)
 @bot.command()
 async def status(ctx):
     try:
