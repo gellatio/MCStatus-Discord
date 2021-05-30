@@ -13,7 +13,7 @@ async def on_ready():
     print('Logged in as')
     print(bot.user.name)
     print(bot.user.id)
-    print('BOT MADE BY GELLATIO (@femboychrist on twitter)')
+    print('github.com/softgrass')
 
 @bot.event
 async def on_guild_join(guild):
